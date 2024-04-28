@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="myListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainGUI">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="102.0" prefWidth="805.0">
+         <children>
+            <Label layoutX="111.0" layoutY="30.0" prefHeight="54.0" prefWidth="179.0" text="fastMail" textFill="#378a8d" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font name="Courant Bold Italic" size="37.0" />
+               </font>
+            </Label>
+            <Button fx:id="sendBtn" layoutX="599.0" layoutY="33.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="169.0" style="-fx-background-color: #77d7bf; -fx-background-radius: 60;" text="Compose" textFill="#378a8d">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/penpic.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Courant Bold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="64.0" layoutX="42.0" layoutY="25.0" opacity="0.29" strokeType="INSIDE" width="257.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color blue="0.7490196228027344" green="0.843137264251709" red="0.46666666865348816" />
+                           </color></Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color blue="0.9686274528503418" green="0.9686274528503418" red="0.9725490212440491" />
+                           </color></Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#77d7bf" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke></Rectangle>
+            <ImageView fitHeight="101.0" fitWidth="86.0" layoutX="36.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/mailpic.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <HBox layoutY="103.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="40.0">
+         <children>
+            <TabPane fx:id="tabList" nodeOrientation="LEFT_TO_RIGHT" prefHeight="620.0" prefWidth="40.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab fx:id="inboxTab" closable="false" style="-fx-font-family: Arial (Bold);" text="Inbox" />
+                  <Tab fx:id="projectTab" closable="false" style="-fx-font-family: Arial (Bold);" text="Project" />
+                  <Tab fx:id="subjectTab" closable="false" style="-fx-font-family: Arial (Bold);" text="Important" />
+                  <Tab fx:id="workTab" closable="false" style="-fx-font-family: Arial (Bold);" text="Work" />
+                  <Tab fx:id="spamTab" closable="false" style="-fx-font-family: Arial (Bold);" text="Spam" />
+               </tabs>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </TabPane>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </HBox>
+      <SplitPane fx:id="splitPane" dividerPositions="0.3" layoutX="37.0" layoutY="102.0" prefHeight="627.0" prefWidth="770.0">
+         <items>
+            <AnchorPane prefHeight="546.0" prefWidth="226.0" />
+            <ScrollPane fx:id="scrollPane" prefHeight="639.0" prefWidth="538.0">
+               <content>
+                  <AnchorPane fx:id="MailDetail" minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="537.0">
+                     <children>
+                        <Label id="mySenderLabel" fx:id="senderLabel" layoutX="17.0" layoutY="47.0" prefHeight="27.0" prefWidth="487.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label id="myToLabel" fx:id="toLabel" layoutX="17.0" layoutY="77.0" prefHeight="27.0" prefWidth="487.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label id="myCcLabel" fx:id="ccLabel" layoutX="17.0" layoutY="109.0" prefHeight="21.0" prefWidth="490.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label id="mySenderLabel" fx:id="dateLabel" layoutX="17.0" layoutY="14.0" prefHeight="27.0" prefWidth="487.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label id="mySubjectLabel" fx:id="subjectLabel" layoutX="16.0" layoutY="142.0" prefHeight="34.0" prefWidth="490.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="mainLoginScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.LoginGUI">
+   <children>
+      <AnchorPane prefHeight="461.0" prefWidth="426.0" style="-fx-background-color: c2f0e4;">
+         <children>
+            <Button fx:id="loginBtn" layoutX="85.0" layoutY="298.0" mnemonicParsing="false" onAction="#login" prefHeight="45.0" prefWidth="230.0" style="-fx-background-color: #77d7bf; -fx-background-radius: 60;" text="Log In" textFill="#378a8d">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="username" layoutX="85.0" layoutY="194.0" prefHeight="31.0" prefWidth="230.0" promptText="Username" style="-fx-background-radius: 60;">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <PasswordField fx:id="password" layoutX="85.0" layoutY="240.0" prefHeight="31.0" prefWidth="230.0" promptText="Password" style="-fx-background-radius: 60;">
+               <font>
+                  <Font size="16.0" />
+               </font></PasswordField>
+            <Label layoutX="85.0" layoutY="84.0" text="Welcome!" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="47.0" />
+               </font>
+            </Label>
+            <Label layoutX="85.0" layoutY="155.0" text="Log in to your Email">
+               <font>
+                  <Font name="Courant Bold Italic" size="17.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#378a8d" />
+                        <Stop color="#44ddbc" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="error" alignment="BASELINE_LEFT" layoutX="65.0" layoutY="352.0" prefHeight="73.0" prefWidth="296.0" text="Username has wrong format. Please type again!        -Ex: abc@example.com" textFill="#945555" visible="false" wrapText="true">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="showPassword" prefHeight="466.0" prefWidth="292.0">
+         <children>
+            <ImageView fitHeight="318.0" fitWidth="296.0" layoutX="-31.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/mailpic.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="45.0" layoutX="44.0" layoutY="265.0" strokeType="INSIDE" width="178.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#77d7bf" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#77d7bf" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color blue="0.7490196228027344" green="0.843137264251709" red="0.46666666865348816" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color blue="0.9686274528503418" green="0.9686274528503418" red="0.9725490212440491" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label layoutX="64.0" layoutY="272.0" prefHeight="31.0" prefWidth="178.0" text="fastMail" textFill="#378a8d">
+               <font>
+                  <Font name="Calibri Bold Italic" size="40.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </children>
+</HBox>
